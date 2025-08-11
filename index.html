@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HOLOLULU — Daisy Riot Tee</title>
+  <meta name="description" content="Cobalt blue screen-printed tee — raw, energetic, zine-inspired.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <style>
+    h1,h2,h3,.brand h1{font-family: 'Anton', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;}
+    body{font-family:'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"}
+  </style>
+  <script src="https://js.stripe.com/v3"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="logo">HL</div>
+        <h1>HOLOLULU</h1>
+      </div>
+      <div>
+        <button id="checkout" class="btn secondary">Checkout (<span id="cartCount">0</span>)</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h2>Daisy Riot Tee — cobalt on white</h2>
+          <p>Single‑color screenprint, raw and retro‑punk energy with thick lines, halftone texture, and grinning daisies. Premium cotton tee with a bold back print sized for impact.</p>
+          <div class="price" id="price">€35.00</div>
+          <div class="option-row">
+            <div class="swatches">
+              <label class="swatch"><input type="radio" name="colorway" value="white-cobalt" checked><span class="dot white"></span><span class="label">White/Cobalt</span></label>
+              <label class="swatch"><input type="radio" name="colorway" value="cobalt-white"><span class="dot cobalt"></span><span class="label">Cobalt/White</span></label>
+            </div>
+          </div>
+          <div class="option-row">
+            <div class="size">
+              <input type="radio" id="s" name="size" value="S"><label for="s">S</label>
+              <input type="radio" id="m" name="size" value="M" checked><label for="m">M</label>
+              <input type="radio" id="l" name="size" value="L"><label for="l">L</label>
+              <input type="radio" id="xl" name="size" value="XL"><label for="xl">XL</label>
+              <input type="radio" id="xxl" name="size" value="XXL"><label for="xxl">XXL</label>
+            </div>
+            <div class="qty">
+              <button aria-label="Decrease" data-delta="dec">−</button>
+              <input id="qty" type="number" min="1" value="1" inputmode="numeric">
+              <button aria-label="Increase" data-delta="inc">+</button>
+            </div>
+          </div>
+          <div class="option-row">
+            <button id="addToCart" class="btn">Add to cart</button>
+          </div>
+          <div class="option-row" style="margin-top:0">  <span class="link" id="sizeChartLink">Size chart</span></div>
+<div class="trust-row">
+            <span>• Heavy cotton 200gsm</span>
+            <span>• Screen‑printed in EU</span>
+            <span>• Free returns 30 days</span>
+          </div>
+        </div>
+        <div>
+          <div class="card halftone">
+            <div class="img-wrap">
+              <span class="badge">BACK PRINT</span>
+              <img id="heroImg" src="assets/img/mockup_model.webp" alt="Model wearing HOLOLULU Daisy Riot Tee">
+            </div>
+            <noscript><div style="padding:10px 12px; font-size:13px;">Note: Enable JavaScript to switch colorway images.</div></noscript>
+            <div class="panel">
+              <strong>Graphic-forward, brutalist, zine‑inspired.</strong>
+              <p style="margin:6px 0 0; opacity:.85">Cobalt blue ink on soft white. Thick lines, minimal shading, and comic halftones.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery">
+      <div class="container">
+        <div class="gallery-grid">
+          <div class="thumb halftone">
+            <img src="assets/img/print.webp" alt="Vector artwork: HOLOLULU Daisy Riot">
+            <div class="caption">Original vector art — single color cobalt ink, heavy outlines, tight layout.</div>
+          </div>
+          <div class="thumb halftone">
+            <img src="assets/img/car_half.webp" alt="Cobalt Peugeot 106 graphic, rear-half profile">
+            <div class="caption">Mood &amp; color language applied across objects and scenes.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+  <div class="modal-backdrop" id="modalBackdrop"></div>
+  <div class="modal" id="sizeModal">
+    <header>
+      <h3>Size chart</h3>
+      <button class="close" data-close-modal>&times;</button>
+    </header>
+    <div class="body">
+      <p style="margin-top:0; opacity:.85">Measurements in centimeters — lay-flat garment. Allow ±2cm tolerance.</p>
+      <table class="size-table">
+        <tr><th>Size</th><th>Chest (A)</th><th>Length (B)</th><th>Sleeve (C)</th></tr>
+        <tr><td>S</td><td>49</td><td>69</td><td>20</td></tr>
+        <tr><td>M</td><td>52</td><td>72</td><td>21</td></tr>
+        <tr><td>L</td><td>55</td><td>74</td><td>22</td></tr>
+        <tr><td>XL</td><td>58</td><td>76</td><td>23</td></tr>
+        <tr><td>XXL</td><td>61</td><td>78</td><td>24</td></tr>
+      </table>
+      <p style="opacity:.75">Tip: measure a favorite tee and compare.</p>
+      <div style="text-align:right"><button class="btn secondary" data-close-modal>Close</button></div>
+    </div>
+  </div>
+
+</main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> HOLOLULU — All rights reserved. <br>
+      Replace the mailto checkout with your payment link (Stripe, Shopify, etc.).</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear()</script>
+</body>
+</html>
