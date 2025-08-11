@@ -5,7 +5,7 @@
 const CHECKOUT_MODE = "server"; // "server" or "payment_link"
 
 // Set your Stripe publishable key here (server mode). Example: "pk_live_..."
-const STRIPE_PUBLISHABLE_KEY = "pk_test_REPLACE_ME";
+const STRIPE_PUBLISHABLE_KEY = "pk_test_51Rul9NPRSp4gs3hymRfSmRGk2Vhs8Pr328J5GB1ZTRGlW0WnkavQDlvLqZFvILMF44U9sY8ejkdcLEkGqwCfkqTI00JGwxYyKU";
 
 // Payment Link mode: map colorway -> Payment Link URL (replace with your real links).
 const PAYMENT_LINKS = {
