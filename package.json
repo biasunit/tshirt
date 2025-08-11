@@ -1,0 +1,9 @@
+{
+  "name": "hololulu-store",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "stripe": "^14.25.0"
+  }
+}
