@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Order Confirmed — HOLOLULU</title>
+  <style>
+    :root{--cobalt:#1140ff}
+    body{margin:0;font-family:system-ui,Inter,Arial;background:#fff;color:#111}
+    .wrap{max-width:720px;margin:14vh auto 0;padding:0 20px;text-align:center}
+    h1{color:var(--cobalt);font-size:42px;margin:0 0 12px}
+    p{opacity:.85}
+    .btn{display:inline-block;margin-top:18px;padding:12px 16px;border-radius:10px;
+         background:var(--cobalt);color:#fff;text-decoration:none;font-weight:700}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Thank you! 🎉</h1>
+    <p>Your order was successful. We’ve emailed your receipt.</p>
+    <p>You’ll get a shipping update as soon as it’s on the way.</p>
+    <a class="btn" href="/">Back to shop</a>
+  </div>
+  <script>
+    // clear local cart after success
+    try { localStorage.removeItem('cart'); } catch {}
+  </script>
+</body>
+</html>
