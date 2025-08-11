@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "routes": [
+    { "src": "^/success$", "dest": "/success.html" },
+    { "src": "^/cancel$", "dest": "/cancel.html" },
+    { "src": "/api/create-checkout-session", "dest": "/api/create-checkout-session.js" }
+  ]
+}
